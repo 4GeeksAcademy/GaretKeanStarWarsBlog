@@ -1,0 +1,2 @@
+// for the details component I will bring in the category. use useParams from reactrouter.com to grab the id for the index.
+// use ternary operator dependant on the category for the info depending on the category and the info.

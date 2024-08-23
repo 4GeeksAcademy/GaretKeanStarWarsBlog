@@ -1,42 +1,62 @@
+
+
 const getState = ({ getStore, getActions, setStore }) => {
+	const apiUrl = "https://swapi.dev/api/"
+
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			characters: [],
+			planets: [],
+			starships: [],
+			favorites: []
+
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			
+			getCharacters: () => {
+				fetch(apiUrl + "people")
+				.then(resp => resp.json())
+				.then(data => setStore({characters: data.results}))
+				.catch(error => console.log(error))
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			// getCharacters: () => {
+			// 	fetch(apiUrl + "people")
+			// 	.then(resp => {
+			// 		console.log("Response:", resp); 
+			// 		return resp.json();
+			// 	})
+			// 	.then(data => {
+			// 		console.log("Result:", data); 
+			// 		setStore({ characters: data.results });
+			// 	})
+			// 	.catch(error => console.log(error));
+			// },
+			getPlanets: () => {
+				fetch(apiUrl + "planets")
+				.then(resp => resp.json())
+				.then(data => setStore({planets: data.results}))
+				.catch(error => console.log(error))
 			},
-			changeColor: (index, color) => {
-				//get the store
+			getStarships: () => {
+				fetch(apiUrl + "starships")
+				.then(resp => resp.json())
+				.then(data => setStore({starships: data.results}))
+				.catch(error => console.log(error))
+			},
+			addFavorites: (favItem) => {
+				// const store = getStore();
+				// store.favorites.push(favItem);
+				// setStore(store);
+				setStore({
+					favorites: [...getStore().favorites, favItem]
+				})
+			},
+			deleteFavorites: (index) => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				const newFavorites = store.favorites.filter((_, i) => i !== index); 
+				setStore({
+					favorites: newFavorites
+				})
 			}
 		}
 	};
