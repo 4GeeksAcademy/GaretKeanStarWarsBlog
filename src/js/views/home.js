@@ -14,10 +14,10 @@ export const Home = () => {
 
 	return (
 		<div className="main-div">
-			<div className="d-flex flex-col w-100 mt-3 align-item-center">
+			<div className="d-flex flex-column w-100 mt-3 align-item-center">
 				{/* characters card div */}
-				<h1>Characters</h1>
-				<div id="cardDiv" className="d-flex flex-nowrap overflow-x-scroll align-items-stretch">
+				<h1>Characters</h1> 
+				<div id="cardDiv" className="d-flex flex-nowrap overflow-scroll align-items-stretch">
 					{store.characters.map((item, index) => {
 						return (
 							<Card item={item} index={index} key={index} category="characters" /> 
@@ -25,24 +25,24 @@ export const Home = () => {
 					})}
 				</div>
 			</div>
-			<div className="d-flex flex-col w-100 mt-3 align-item-center">
+			<div className="d-flex flex-column w-100 mt-3 align-item-center">
 				{/* planets card div */}
-				<h1>Characters</h1>
-				<div id="cardDiv" className="d-flex flex-nowrap overflow-x-auto align-items-stretch">
-					{store.characters.map((item, index) => {
+				<h1>Planets</h1>
+				<div id="cardDiv" className="d-flex flex-nowrap overflow-scroll align-items-stretch">
+					{store.planets.map((item, index) => {
 						return (
-							<Card item={item} index={index} key={index} category="characters" /> 
+							<Card item={item} index={index} key={index} category="planets" /> 
 						)
 					})}
 				</div>
 			</div>
-			<div className="d-flex flex-col w-100 mt-3 align-item-center">
+			<div className="d-flex flex-column w-100 mt-3 align-item-center">
 				{/* starships card div */}
-				<h1>Characters</h1>
-				<div id="cardDiv" className="d-flex flex-nowrap overflow-x-auto align-items-stretch">
-					{store.characters.map((item, index) => {
+				<h1>Starships</h1>
+				<div id="cardDiv" className="d-flex flex-nowrap overflow-scroll align-items-stretch">
+					{store.starships.map((item, index) => {
 						return (
-							<Card item={item} index={index} key={index} category="characters" /> 
+							<Card item={item} index={index} key={index} category="starships" /> 
 						)
 					})}
 				</div>

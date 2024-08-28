@@ -5,3 +5,17 @@
 .card{
     min-width: 18rem;
 }
+
+h1{
+    align-self: flex-start;
+    margin-left: 12%;
+    color: rgb(219, 0, 0);
+}
+#cardDiv{
+    width: 70%;
+    overflow-y: hidden !important;
+}
+.card{
+    min-width: 18%;
+    margin: 5;
+}
