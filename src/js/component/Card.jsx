@@ -2,7 +2,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-
+import tatooine from "../../tatooine.jpg"
 // addToFavorites function is called when clicking on the heart icon. This function is going to add that item to the store.favorites.
 // Inside of the same functions have a way to delete the favorite if it is already a favorite.
 // for the <h5> tags bring in item.name variable. for the <p> use ternary operator depending on what the category is.
@@ -58,7 +58,7 @@ const handleFavorites = () => {
                             <button className="btn btn-primary" type="button">Learn more!</button>
                         </Link>
                             <button className="btn btn-outline-secondary btn-heart" onClick={handleFavorites} type="button">
-                            <i className="fa-regular fa-heart heartBtn" style={{color: isFavorite ? "rgb(219, 0, 0)" : "black"}}></i>
+                            <i className="fa-solid fa-heart heartBtn" style={{color: isFavorite ? "rgb(219, 0, 0)" : "black"}}></i>
                             </button>
                     </div>
                 </div>

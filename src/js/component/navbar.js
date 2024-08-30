@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
+import swLogo from "../../img/swLogo.png"
 
 
 // bring in {category} to the Navbar parameters
@@ -20,8 +20,8 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-dark bg-dark mb-3 px-5">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Star Wars </span>
+			<Link to="/" className="logoDiv">
+				<img src={swLogo} style={{height: "80px"}} alt="https://www.freepnglogos.com/images/star-wars-logo-1002.html" />
 			</Link>
 			<div className="ml-auto dropdown">
 
@@ -33,11 +33,13 @@ export const Navbar = () => {
 					{store.favorites.length > 0 ? (
 						store.favorites.map((favs, index) => (
 							<li className= "dropdown-item d-flex justify-content-between" key={index} >
-								<Link to={"/details/" + favs.category + "/" + favs.index} className="favlink" >
+								<Link to={"/details/" + favs.category + "/" + favs.index} className="favlink text-white" >
 
 									<span>{favs.name}</span>
 								</Link>
-								<span onClick={() => handleDeleteFavorite(index)}>addtrashcanicon</span>
+								<span onClick={() => handleDeleteFavorite(index)}>
+									<i className="fa-regular fa-trash-can"></i>
+								</span>
 							</li>
 						))
 					) : (

@@ -13,7 +13,7 @@ export const Home = () => {
 
 
 	return (
-		<div className="main-div">
+		<div className="main-div w-100">
 			<div className="d-flex flex-column w-100 mt-3 align-item-center">
 				{/* characters card div */}
 				<h1>Characters</h1> 
