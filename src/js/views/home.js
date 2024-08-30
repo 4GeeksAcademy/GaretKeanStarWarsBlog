@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Card from "../component/Card.jsx";
 // bring in card component
