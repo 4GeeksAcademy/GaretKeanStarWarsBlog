@@ -118,64 +118,81 @@ export const Details = ({ category }) => {
                             <div className="d-flex flex-row" style={{ fontSize: "1rem" }}>
                                 <u className="w-50 text-end pe-2">
                                     {
-                                        category == "characters" ? "Birth Year:" :
-                                            category == "planets" ? "Terrain:" :
-                                                "Manufacturer:"
+                                        category == "characters" ? "Height:" :
+                                            category == "planets" ? "Climate:" :
+                                                "Crew limit:"
                                     }
                                 </u>
                                 <p className="ps-2">
                                     {
-                                        category == "characters" ? character.birth_year :
-                                            category == "planets" ? planet.terrain :
-                                                starship.manufacturer
+                                        category == "characters" ? character.height :
+                                            category == "planets" ? planet.climate :
+                                                starship.crew
                                     }
                                 </p>
                             </div>
+
+
+                            {/* Detail 4 */}
+
                             <div className="d-flex flex-row" style={{ fontSize: "1rem" }}>
                                 <u className="w-50 text-end pe-2">
                                     {
-                                        category == "characters" ? "Birth Year:" :
-                                            category == "planets" ? "Terrain:" :
-                                                "Manufacturer:"
+                                        category == "characters" ? "Gender:" :
+                                            category == "planets" ? "Diameter:" :
+                                                "Atmospheric top speed:"
                                     }
                                 </u>
                                 <p className="ps-2">
                                     {
-                                        category == "characters" ? character.birth_year :
-                                            category == "planets" ? planet.terrain :
-                                                starship.manufacturer
+                                        category == "characters" ? character.gender :
+                                            category == "planets" ? planet.diameter :
+                                                starship.max_atmosphering_speed
                                     }
                                 </p>
                             </div>
+
+
+
+                            {/* detail 5 */}
+
+
                             <div className="d-flex flex-row" style={{ fontSize: "1rem" }}>
                                 <u className="w-50 text-end pe-2">
                                     {
-                                        category == "characters" ? "Birth Year:" :
-                                            category == "planets" ? "Terrain:" :
-                                                "Manufacturer:"
+                                        category == "characters" ? "Eye color:" :
+                                            category == "planets" ? "Population:" :
+                                                "Price:"
                                     }
                                 </u>
                                 <p className="ps-2">
                                     {
-                                        category == "characters" ? character.birth_year :
-                                            category == "planets" ? planet.terrain :
-                                                starship.manufacturer
+                                        category == "characters" ? character.eye_color :
+                                            category == "planets" ? planet.population :
+                                                starship.cost_in_credits
                                     }
                                 </p>
                             </div>
+
+
+
+                            {/* detail 6 */}
+
+
+
                             <div className="d-flex flex-row" style={{ fontSize: "1rem" }}>
                                 <u className="w-50 text-end pe-2">
                                     {
-                                        category == "characters" ? "Birth Year:" :
-                                            category == "planets" ? "Terrain:" :
-                                                "Manufacturer:"
+                                        category == "characters" ? "Weight:" :
+                                            category == "planets" ? "Rotational period:" :
+                                                "Food reserves:"
                                     }
                                 </u>
                                 <p className="ps-2">
                                     {
-                                        category == "characters" ? character.birth_year :
-                                            category == "planets" ? planet.terrain :
-                                                starship.manufacturer
+                                        category == "characters" ? character.mass :
+                                            category == "planets" ? planet.rotation_period :
+                                                starship.consumables
                                     }
                                 </p>
                             </div>
